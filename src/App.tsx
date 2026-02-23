@@ -85,9 +85,9 @@ export default function App() {
       <Snowfall color="#82C3D9" />
       <RamadanBanner /> 
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
-      <main className="flex-1">
-        {renderPage()}
-      </main>
+     <main className="flex-1">
+  {renderPage()}
+</main> 
       <Footer />
     </div>
   );
