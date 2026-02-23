@@ -1,4 +1,5 @@
 import React from "react";
+import { Globe } from "lucide-react";
 
 export default function MealCard({ meal, onMealClick }) {
   return (
@@ -14,7 +15,7 @@ export default function MealCard({ meal, onMealClick }) {
       <div className="px-6 pb-10 text-center">
         <h3 className="font-bold text-xl mb-2 text-[#3E1F00]">{meal.strMeal}</h3>
         <p className="text-sm text-amber-600 mb-4 flex items-center justify-center gap-1 font-medium">
-          <span>🌍</span>
+         <Globe className="w-4 h-4 text-amber-600" />
           {meal.strArea || "International"}
         </p>
         <button

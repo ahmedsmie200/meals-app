@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import HomePage from './Pages/Home';
+import HomePage from './pages/Home';
 import MealDetailsPage from './pages/MealDetails';
 import IngredientsPage from './pages/Ingredientspage';
 import AreaPage from './pages/AreaPage';
@@ -21,7 +21,7 @@ export default function App() {
     }
   }, []);
 
-  const handleMealClick = (mealId: any) => {
+  const handleMealClick = (mealId: string) => {
     setSelectedMealId(mealId);
     setCurrentPage('details');
     window.history.pushState({}, '', `?meal=${mealId}`);

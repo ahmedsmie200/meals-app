@@ -1,11 +1,12 @@
 import React from "react";
+import { Utensils, Carrot, Globe } from "lucide-react";
 import myLogo from "../assets/imgi_1_logo-BfNap0Pe.png";
 
 export default function Sidebar({ currentPage, onNavigate }) {
   const navItems = [
-    { label: "Meals", icon: "🍽️", page: "meals" },
-    { label: "Ingredients", icon: "🥘", page: "ingredients" },
-    { label: "Area", icon: "🌍", page: "area" },
+    { label: "Meals", icon: Utensils, page: "meals" },
+    { label: "Ingredients", icon: Carrot, page: "ingredients" },
+    { label: "Area", icon: Globe, page: "area" },
   ];
 
   return (
@@ -29,7 +30,7 @@ export default function Sidebar({ currentPage, onNavigate }) {
                 : "bg-white text-[#3E1F00] border border-amber-200 hover:bg-amber-50 hover:border-amber-400"
             }`}
           >
-            <span>{item.icon}</span>
+            <item.icon className="w-4 h-4" />
             {item.label}
           </button>
         ))}

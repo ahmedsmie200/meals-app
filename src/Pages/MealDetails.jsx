@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Globe, Utensils, ShoppingBasket, Info, ChefHat, Youtube, Link, ArrowLeft, Tv } from "lucide-react";
 
 const API_BASE = "https://www.themealdb.com/api/json/v1/1";
 
@@ -56,7 +57,7 @@ export default function MealDetailsPage({ mealId, onBack }) {
           <p className="text-gray-600 mb-6">The meal ID you're looking for doesn't exist or is invalid.</p>
           <button
             onClick={onBack}
-            className="bg-linear-to-r from-orange-400 to-orange-300 text-white py-3 px-10 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
+            className="bg-gradient-to-r from-orange-400 to-orange-300 text-white py-3 px-10 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
           >
             Back to Home
           </button>
@@ -68,32 +69,33 @@ export default function MealDetailsPage({ mealId, onBack }) {
 
   return (
     <div className="min-h-screen bg-gray-100">
-   
+
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-6 py-5">
           <button
             onClick={onBack}
             className="flex items-center gap-2 text-orange-500 font-semibold text-base hover:text-orange-600 transition-colors"
           >
-            <span className="text-xl">←</span> Back to Meals
+            <ArrowLeft className="w-5 h-5" /> Back to Meals
           </button>
         </div>
       </div>
+
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div
             className="relative h-96 bg-cover bg-center"
             style={{ backgroundImage: `url(${meal.strMealThumb})` }}
           >
-            <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
               <h1 className="text-4xl font-bold mb-4 drop-shadow-lg">{meal.strMeal}</h1>
               <div className="flex gap-4 text-sm">
-                <span className="bg-white/25 backdrop-blur px-4 py-1 rounded-full font-medium">
-                  🌍 {meal.strArea}
+                <span className="bg-white/25 backdrop-blur px-4 py-1 rounded-full font-medium flex items-center gap-1">
+                  <Globe className="w-4 h-4" /> {meal.strArea}
                 </span>
-                <span className="bg-white/25 backdrop-blur px-4 py-1 rounded-full font-medium">
-                  🍽️ {meal.strCategory}
+                <span className="bg-white/25 backdrop-blur px-4 py-1 rounded-full font-medium flex items-center gap-1">
+                  <Utensils className="w-4 h-4" /> {meal.strCategory}
                 </span>
               </div>
             </div>
@@ -101,10 +103,10 @@ export default function MealDetailsPage({ mealId, onBack }) {
 
           <div className="p-10 space-y-10">
             <div className="grid md:grid-cols-2 gap-10">
-        
+
               <div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="text-3xl">🥘</span> Ingredients
+                  <ShoppingBasket className="w-7 h-7 text-orange-500" /> Ingredients
                 </h2>
                 <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
                   <ul className="space-y-2">
@@ -121,7 +123,7 @@ export default function MealDetailsPage({ mealId, onBack }) {
 
               <div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <span className="text-3xl">ℹ️</span> Information
+                  <Info className="w-7 h-7 text-orange-500" /> Information
                 </h2>
                 <div className="flex flex-col gap-4">
                   {meal.strTags && (
@@ -144,9 +146,9 @@ export default function MealDetailsPage({ mealId, onBack }) {
                       href={meal.strYoutube}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block bg-red-500 text-white text-center py-3 rounded-xl font-semibold text-sm hover:bg-red-600 hover:scale-105 transition-transform duration-300"
+                      className="flex items-center justify-center gap-2 bg-red-500 text-white text-center py-3 rounded-xl font-semibold text-sm hover:bg-red-600 hover:scale-105 transition-transform duration-300"
                     >
-                      Watch on YouTube 📺
+                      <Tv className="w-4 h-4" /> Watch on YouTube
                     </a>
                   )}
                   {meal.strSource && (
@@ -154,9 +156,9 @@ export default function MealDetailsPage({ mealId, onBack }) {
                       href={meal.strSource}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block bg-blue-500 text-white text-center py-3 rounded-xl font-semibold text-sm hover:bg-blue-600 hover:scale-105 transition-transform duration-300"
+                      className="flex items-center justify-center gap-2 bg-blue-500 text-white text-center py-3 rounded-xl font-semibold text-sm hover:bg-blue-600 hover:scale-105 transition-transform duration-300"
                     >
-                      View Source 🔗
+                      <Link className="w-4 h-4" /> View Source
                     </a>
                   )}
                 </div>
@@ -165,9 +167,9 @@ export default function MealDetailsPage({ mealId, onBack }) {
 
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <span className="text-3xl">👨‍🍳</span> Instructions
+                <ChefHat className="w-7 h-7 text-orange-500" /> Instructions
               </h2>
-              <div className="bg-linear-to-br from-green-100 to-green-50 border border-green-200 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-green-100 to-green-50 border border-green-200 rounded-xl p-8">
                 <p className="text-gray-800 text-sm leading-relaxed whitespace-pre-line">
                   {meal.strInstructions}
                 </p>

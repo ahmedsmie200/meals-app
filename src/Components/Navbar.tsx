@@ -1,6 +1,5 @@
   import React, { useState } from "react";
-  import { ChefHat, Menu, X } from "lucide-react";
-
+import { ChefHat, Menu, X, Utensils, Carrot, Globe } from "lucide-react";
   interface NavbarProps {
     currentPage: string;
     onNavigate: (page: string) => void;
@@ -8,12 +7,11 @@
 
   export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const navItems = [
-      { label: "Meals", icon: "🍽️", page: "meals" },
-      { label: "Ingredients", icon: "🥘", page: "ingredients" },
-      { label: "Area", icon: "🌍", page: "area" },
-    ];
+const navItems = [
+  { label: "Meals", icon: Utensils, page: "meals" },
+  { label: "Ingredients", icon: Carrot, page: "ingredients" },
+  { label: "Area", icon: Globe, page: "area" },
+];
 
     return (
       <div className="bg-[#3E1F00] shadow-md sticky top-0 z-50">
@@ -47,7 +45,7 @@
                     : "text-amber-100 hover:bg-[#5C2E00] hover:text-white"
                 }`}
               >
-                <span>{item.icon}</span>
+               <item.icon className="w-4 h-4" />
                 {item.label}
                 {currentPage === item.page && (
                   <span className="w-1.5 h-1.5 rounded-full bg-[#3E1F00] ml-1"></span>
@@ -79,7 +77,7 @@
                     : "text-amber-100 hover:bg-[#5C2E00]"
                 }`}
               >
-                <span>{item.icon}</span>
+                <item.icon className="w-4 h-4" />
                 {item.label}
                 {currentPage === item.page && (
                   <span className="ml-auto text-xs text-[#3E1F00] font-bold">●</span>

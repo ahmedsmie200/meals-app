@@ -90,8 +90,7 @@ export default function RamadanBanner() {
       </div>
 
       <div className="ramadan-greeting">
-        <h2>رمضان كريم 🌙</h2>
-        <p>أعاده الله عليكم بالخير واليُمن والبركات</p>
+<h2>🌙 RAMADAN KAREEM</h2>        
       </div>
     </div>
   );

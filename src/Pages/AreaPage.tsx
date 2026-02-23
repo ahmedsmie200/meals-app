@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Globe, Search } from "lucide-react";
 import Sidebar from "../Components/Sidebar";
 
 const API_BASE = "https://www.themealdb.com/api/json/v1/1";
@@ -33,7 +34,6 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
       const data = await res.json();
       const areaList = data.meals || [];
       setAreas(areaList);
-      // Fetch meal counts for each area
       fetchMealCounts(areaList);
     } catch (e) {
       console.error(e);
@@ -85,10 +85,11 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
         <div className="flex-1 p-4 sm:p-8 overflow-x-hidden">
           <div className="mb-6">
             <h2
-              className="text-2xl sm:text-3xl font-bold text-[#3E1F00] mb-1"
+              className="text-2xl sm:text-3xl font-bold text-[#3E1F00] mb-1 flex items-center gap-2"
               style={{ fontFamily: "Pacifico, cursive" }}
             >
-              🌍 World Cuisines
+              <Globe className="w-7 h-7 text-amber-600" />
+              World Cuisines
             </h2>
             <p className="text-amber-700 text-sm">
               Explore recipes from {areas.length} cuisines around the globe
@@ -103,7 +104,7 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
               onChange={(e) => setSearch(e.target.value)}
               className="w-full px-5 py-3 rounded-full border border-amber-300 bg-white text-[#3E1F00] placeholder-amber-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
             />
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-amber-400">🔍</span>
+            <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-400" />
           </div>
 
           {loadingAreas ? (
