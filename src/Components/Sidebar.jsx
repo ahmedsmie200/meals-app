@@ -1,45 +1,41 @@
 import React from "react";
 import myLogo from "../assets/imgi_1_logo-BfNap0Pe.png";
-export default function Sidebar() {
-  return <>
-    <div className="w-45 bg-white py-5 border-r border-gray-200 shrink-0 sticky top-0 h-screen">
-       <div className="px-4 mb-8">
+
+export default function Sidebar({ currentPage, onNavigate }) {
+  const navItems = [
+    { label: "Meals", icon: "🍽️", page: "meals" },
+    { label: "Ingredients", icon: "🥘", page: "ingredients" },
+    { label: "Area", icon: "🌍", page: "area" },
+  ];
+
+  return (
+    <div className="w-48 bg-[#FAF6F1] py-5 border-r border-amber-200 shrink-0 sticky top-0 h-screen hidden md:flex flex-col">
+      {/* Logo */}
+      <div className="px-4 mb-8">
         <img
           src={myLogo}
           alt="Logo"
           className="w-full h-auto rounded-xl object-cover"
         />
       </div>
-      <div className="px-4 space-y-3">
-        <button className="
-          w-full bg-linear-to-r from-orange-400 to-orange-300
-          text-white py-2 px-5 rounded-full font-semibold text-sm
-          flex items-center gap-2 shadow-md hover:scale-[1.02] 
-          transition-all duration-300
-        ">
-          <span>🍽️</span>
-          Meals
-        </button>
-        <button className="
-          w-full bg-white text-gray-700 py-2 px-5 rounded-full text-sm font-medium
-          border border-gray-300 flex items-center gap-2
-          transition-all duration-300
-          hover:bg-orange-50 hover:border-orange-400
-        ">
-          <span>🥘</span>
-          Ingredients
-        </button>
 
-        <button className="
-          w-full bg-white text-gray-700 py-2 px-5 rounded-full text-sm font-medium
-          border border-gray-300 flex items-center gap-2
-          transition-all duration-300
-          hover:bg-orange-50 hover:border-orange-400
-        ">
-          <span>🌍</span>
-          Area
-        </button>
+      {/* Nav Buttons */}
+      <div className="px-4 space-y-3">
+        {navItems.map((item) => (
+          <button
+            key={item.page}
+            onClick={() => onNavigate && onNavigate(item.page)}
+            className={`w-full py-2 px-5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all duration-300 ${
+              currentPage === item.page
+                ? "bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md hover:scale-[1.02]"
+                : "bg-white text-[#3E1F00] border border-amber-200 hover:bg-amber-50 hover:border-amber-400"
+            }`}
+          >
+            <span>{item.icon}</span>
+            {item.label}
+          </button>
+        ))}
       </div>
     </div>
-  </>;
+  );
 }
