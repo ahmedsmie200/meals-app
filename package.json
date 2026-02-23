@@ -1,7 +1,6 @@
 {
   "name": "meals-app",
   "private": true,
-  "homepage": "https://ahmedsmie200.github.io/meals-app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
