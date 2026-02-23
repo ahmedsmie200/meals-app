@@ -3,7 +3,6 @@ import React from "react";
 export default function MealCard({ meal, onMealClick }) {
   return (
     <div className="relative bg-white rounded-2xl cursor-pointer transition-all duration-300 shadow-md hover:-translate-y-1 hover:shadow-xl font-sans group pt-28 mb-20 w-full max-w-xs sm:w-72 border border-amber-100">
-      {/* Circular Image */}
       <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full overflow-hidden border-4 border-amber-100 shadow-md transition-transform duration-700 ease-in-out group-hover:rotate-360">
         <img
           src={meal.strMealThumb}

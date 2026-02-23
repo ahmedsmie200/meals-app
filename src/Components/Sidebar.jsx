@@ -10,7 +10,6 @@ export default function Sidebar({ currentPage, onNavigate }) {
 
   return (
     <div className="w-48 bg-[#FAF6F1] py-5 border-r border-amber-200 shrink-0 sticky top-0 h-screen hidden md:flex flex-col">
-      {/* Logo */}
       <div className="px-4 mb-8">
         <img
           src={myLogo}
@@ -19,7 +18,6 @@ export default function Sidebar({ currentPage, onNavigate }) {
         />
       </div>
 
-      {/* Nav Buttons */}
       <div className="px-4 space-y-3">
         {navItems.map((item) => (
           <button

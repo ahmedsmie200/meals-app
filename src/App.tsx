@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import HomePage from './Pages/Home';
-import MealDetailsPage from './Pages/MealDetails';
-import IngredientsPage from './Pages/Ingredientspage';
-import AreaPage from './Pages/AreaPage';
+import MealDetailsPage from './pages/MealDetails';
+import IngredientsPage from './pages/Ingredientspage';
+import AreaPage from './pages/AreaPage';
 import Snowfall from 'react-snowfall';
-import RamadanBanner from './Components/RamadanBanner'; // ✅ استورد الـ component
+import RamadanBanner from './Components/RamadanBanner'; 
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('meals');
@@ -83,7 +83,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Snowfall color="#82C3D9" />
-      <RamadanBanner /> {/* ✅ حطها هنا فوق الـ Navbar مباشرةً */}
+      <RamadanBanner /> 
       <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
       <main className="flex-1">
         {renderPage()}

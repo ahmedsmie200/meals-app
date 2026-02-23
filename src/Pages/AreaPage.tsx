@@ -3,7 +3,6 @@ import Sidebar from "../Components/Sidebar";
 
 const API_BASE = "https://www.themealdb.com/api/json/v1/1";
 
-// Map area names to flag emojis
 const areaFlags = {
   American: "🇺🇸", British: "🇬🇧", Canadian: "🇨🇦", Chinese: "🇨🇳",
   Croatian: "🇭🇷", Dutch: "🇳🇱", Egyptian: "🇪🇬", Filipino: "🇵🇭",
@@ -84,7 +83,6 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
         <Sidebar currentPage={currentPage} onNavigate={onNavigate} />
 
         <div className="flex-1 p-4 sm:p-8 overflow-x-hidden">
-          {/* Header */}
           <div className="mb-6">
             <h2
               className="text-2xl sm:text-3xl font-bold text-[#3E1F00] mb-1"
@@ -97,7 +95,6 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
             </p>
           </div>
 
-          {/* Search */}
           <div className="relative mb-6 max-w-md">
             <input
               type="text"
@@ -115,7 +112,6 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
             </div>
           ) : (
             <>
-              {/* Area Cards Grid */}
               {!selectedArea && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
                   {filteredAreas.map((area) => (
@@ -143,10 +139,8 @@ export default function AreaPage({ currentPage, onNavigate, onMealClick }) {
                 </div>
               )}
 
-              {/* Meals Panel */}
               {selectedArea && (
                 <div>
-                  {/* Back Button + Title */}
                   <div className="flex items-center gap-3 mb-6">
                     <button
                       onClick={() => { setSelectedArea(null); setMeals([]); }}

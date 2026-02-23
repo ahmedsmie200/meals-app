@@ -96,9 +96,7 @@ export default function IngredientsPage({
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-amber-400">🔍</span>
           </div>
 
-          {/* Two Panel Layout */}
           <div className="flex flex-col lg:flex-row gap-6">
-            {/* Ingredients List */}
             <div className="lg:w-72 flex-shrink-0">
               <h3 className="text-[#3E1F00] font-semibold mb-3 text-sm uppercase tracking-wide">
                 All Ingredients ({filtered.length})
@@ -137,7 +135,6 @@ export default function IngredientsPage({
               )}
             </div>
 
-            {/* Meals Panel */}
             <div className="flex-1">
               {!selectedIngredient ? (
                 <div className="flex flex-col items-center justify-center h-64 text-center">

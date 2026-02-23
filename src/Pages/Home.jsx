@@ -70,7 +70,6 @@ export default function HomePage({ onMealClick, currentPage, onNavigate }) {
               Discover delicious recipes from around the world
             </p>
 
-            {/* Category Tabs */}
             <div className="flex flex-wrap gap-2 mt-5 border-b border-amber-200 pb-4 mb-6">
               <button
                 onClick={() => handleCategoryClick("All")}
